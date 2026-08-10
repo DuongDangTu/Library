@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15C36D65-3C52-497A-9342-1710825EFD06}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Qltv_lg</RootNamespace>
+    <AssemblyName>Qltv_lg</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_UserControl.cs" />
+    <Compile Include="Data_Report\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data_bs\functhongkeTTQS_Result.cs" />
+    <Compile Include="Data_bs\function_listSachLOSS_Result.cs" />
+    <Compile Include="Data_bs\Function_PhieuTraBiPhat_Result.cs" />
+    <Compile Include="Data_bs\Function_PhieuTraNoBiPhat_Result.cs" />
+    <Compile Include="Data_bs\Function_Print1DGtuSach_Result.cs" />
+    <Compile Include="Data_bs\Func_sach1muonDocGia_Result.cs" />
+    <Compile Include="Data_bs\FUN_LietKeTrangThai1DauSach_Result.cs" />
+    <Compile Include="Data_bs\fun_loadAlLDSbyDocGia_Result.cs" />
+    <Compile Include="Data_bs\History_borrow_Result.cs" />
+    <Compile Include="Data_bs\List1SACH_Result.cs" />
+    <Compile Include="Data_bs\ListALLQS_Result.cs" />
+    <Compile Include="Data_bs\Model1.cs" />
+    <Compile Include="Data_bs\Model2.cs" />
+    <Compile Include="Data_bs\Report_muon_nQuyen_Result.cs" />
+    <Compile Include="Data_bs\Report_muon_Result.cs" />
+    <Compile Include="Data_bs\Report_phat_Result.cs" />
+    <Compile Include="Data_bs\Report_tra_Result.cs" />
+    <Compile Include="Data_bs\RS_Result.cs" />
+    <Compile Include="Data_bs\sysdiagram.cs" />
+    <Compile Include="Data_bs\TaiKhoan_Result.cs" />
+    <Compile Include="Data_bs\tb_Acount.cs" />
+    <Compile Include="Data_bs\tb_bb_nhanlaisach.cs" />
+    <Compile Include="Data_bs\tb_ct_nhanlai.cs" />
+    <Compile Include="Data_bs\tb_ct_phieuphat.cs" />
+    <Compile Include="Data_bs\tb_ct_tacgia.cs" />
+    <Compile Include="Data_bs\tb_dausach.cs" />
+    <Compile Include="Data_bs\tb_docgia.cs" />
+    <Compile Include="Data_bs\tb_NhanVien.cs" />
+    <Compile Include="Data_bs\tb_phieubangiaosach.cs" />
+    <Compile Include="Data_bs\tb_phieuphat.cs" />
+    <Compile Include="Data_bs\tb_sach.cs" />
+    <Compile Include="Data_bs\tb_tacgia.cs" />
+    <Compile Include="Data_bs\USPsearch_Result.cs" />
+    <Compile Include="Data_bs\USPsearch_tenDocGia_Result.cs" />
+    <Compile Include="Data_bs\USP_PrintPhieuBanGiao1_Result.cs" />
+    <Compile Include="Data_bs\USP_PrintPhieuBanGiao_Result.cs" />
+    <Compile Include="Data_bs\USP_PrintPhieuTrasach_Result.cs" />
+    <Compile Include="Data_bs\USP_sachmuon1DocGia_Result.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Quyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Quyen.Designer.cs">
+      <DependentUpon>Form_Quyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RpMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RpMuonSach.Designer.cs">
+      <DependentUpon>Form_RpMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunC_InformationNV_Result.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data_Report\QLTVMATTERByHPXC_2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVMATTERByHPXC_2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Report\QLTVMATTERByHPXC_2DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVMATTERByHPXC_2DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sach\CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sach\CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sach\CrystalReport4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sach\CrystalReport5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sach\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\BaoCaoThongKE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\BaoCaoThongKE.Designer.cs">
+      <DependentUpon>BaoCaoThongKE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\MatSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\MatSach.Designer.cs">
+      <DependentUpon>MatSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\ThongKeDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\ThongKeDocGia.Designer.cs">
+      <DependentUpon>ThongKeDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\THongKeTop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\THongKeTop.Designer.cs">
+      <DependentUpon>THongKeTop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl14.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl14.Designer.cs">
+      <DependentUpon>UserControl14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl20.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl20.Designer.cs">
+      <DependentUpon>UserControl20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl21.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl21.Designer.cs">
+      <DependentUpon>UserControl21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl4.Designer.cs">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl5.Designer.cs">
+      <DependentUpon>UserControl5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl7.Designer.cs">
+      <DependentUpon>UserControl7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl8.Designer.cs">
+      <DependentUpon>UserControl8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\UserControl9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sach\UserControl9.Designer.cs">
+      <DependentUpon>UserControl9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\infoStatic.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="WinApi.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Quyen.resx">
+      <DependentUpon>Form_Quyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RpMuonSach.resx">
+      <DependentUpon>Form_RpMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\matsach.rdlc" />
+    <EmbeddedResource Include="Report\Report1.rdlc" />
+    <EmbeddedResource Include="Report\Report2.rdlc" />
+    <EmbeddedResource Include="Report\Report3.rdlc" />
+    <EmbeddedResource Include="Report\ThongKe.rdlc" />
+    <EmbeddedResource Include="Sach\BaoCaoThongKE.resx">
+      <DependentUpon>BaoCaoThongKE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\CrystalReport4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\CrystalReport5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\MatSach.resx">
+      <DependentUpon>MatSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\ThongKeDocGia.resx">
+      <DependentUpon>ThongKeDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\THongKeTop.resx">
+      <DependentUpon>THongKeTop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl14.resx">
+      <DependentUpon>UserControl14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl20.resx">
+      <DependentUpon>UserControl20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl21.resx">
+      <DependentUpon>UserControl21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl4.resx">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl5.resx">
+      <DependentUpon>UserControl5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl7.resx">
+      <DependentUpon>UserControl7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl8.resx">
+      <DependentUpon>UserControl8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\UserControl9.resx">
+      <DependentUpon>UserControl9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Data_Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Data_Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data_Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Data_Report\QLTVMATTERByHPXC_2DataSet.xsc">
+      <DependentUpon>QLTVMATTERByHPXC_2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data_Report\QLTVMATTERByHPXC_2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTVMATTERByHPXC_2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data_Report\QLTVMATTERByHPXC_2DataSet.xss">
+      <DependentUpon>QLTVMATTERByHPXC_2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data_Report\QLTVMATTERByHPXC_2DataSet13.xsc">
+      <DependentUpon>QLTVMATTERByHPXC_2DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="Data_Report\QLTVMATTERByHPXC_2DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTVMATTERByHPXC_2DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data_Report\QLTVMATTERByHPXC_2DataSet13.xss">
+      <DependentUpon>QLTVMATTERByHPXC_2DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="Sach\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Sach\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Sach\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\Image_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\BackGroud_Lg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-binoculars-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-home-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-home-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-book-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-book-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-book-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-user-folder-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-read-online-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-read-online-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-documents-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-note-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-book-and-pencil-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-play-graph-report-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-menu-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-search-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-search-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-cloud-computing-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-cloud-computing-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-contact-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-name-tag-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-gmail-login-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-key-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-contact-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-name-tag-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-gmail-login-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-key-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\20167152353.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\167397629_283697453229036_821561037585731909_n %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\201671523531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-shutdown-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-shutdown-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-insert-page-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-computer-support-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-remove-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-move-left-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-export-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-search-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-borrow-book-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-logout-rounded-left-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-menu-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-borrow-book-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-menu-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-logout-rounded-left-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-borrow-book-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-borrow-book-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-return-book-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-client-management-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-book-shelf-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-book-stack-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\hinh-nen-may-tinh-phong-canh-thien %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\dai-ngan-ha-hinh-nen-1366x768_46.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-shutdown-48 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-laptop-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-computer-support-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-menu-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-search-24 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-menu-48 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-laptop-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-computer-support-96 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-shutdown-48 %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\dai-ngan-ha-hinh-nen-1366x768_461.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\hinh-nen-may-tinh-phong-canh-thien %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\224f31efceaffccdb61621157157663a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-search-24 %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-search-24 %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-insert-column-right-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-borrow-book-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-return-book-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-trash-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-logout-rounded-left-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-logout-rounded-left-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-logout-rounded-left-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-plus-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-minus-sign-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-minus-sign-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewFolder1\Resources\icons8-logout-rounded-left-48 %281%29.png" />
+    <None Include="NewFolder1\Resources\icons8-graph-report-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1656e42a0c563a4.jpg" />
+    <None Include="Resources\03-Stationary-3.jpg" />
+    <None Include="Resources\03-Stationary-31.jpg" />
+    <None Include="Resources\03-Stationary-32.jpg" />
+    <Content Include="Resources\167397629_283697453229036_821561037585731909_n %281%29.jpg" />
+    <Content Include="Resources\20167152353.png" />
+    <Content Include="Resources\201671523531.png" />
+    <Content Include="Resources\224f31efceaffccdb61621157157663a.jpg" />
+    <None Include="Resources\5hUEoyD.gif" />
+    <None Include="Resources\5hUEoyD1.gif" />
+    <None Include="Resources\5487994.jpg" />
+    <Content Include="Resources\BackGroud_Lg.jpg" />
+    <Content Include="Resources\dai-ngan-ha-hinh-nen-1366x768_46.jpg" />
+    <Content Include="Resources\dai-ngan-ha-hinh-nen-1366x768_461.jpg" />
+    <None Include="Resources\dl2hhA.gif" />
+    <Content Include="Resources\hinh-nen-may-tinh-phong-canh-thien %281%29.jpg" />
+    <Content Include="Resources\hinh-nen-may-tinh-phong-canh-thien %281%291.jpg" />
+    <None Include="Resources\hình-động-cho-powerpoint-2.gif" />
+    <None Include="Resources\hình-động-cho-powerpoint-21.gif" />
+    <Content Include="Resources\icons8-binoculars-24.png" />
+    <Content Include="Resources\icons8-book-16.png" />
+    <Content Include="Resources\icons8-book-40.png" />
+    <Content Include="Resources\icons8-book-80.png" />
+    <Content Include="Resources\icons8-book-and-pencil-50.png" />
+    <Content Include="Resources\icons8-book-shelf-48 %281%29.png" />
+    <Content Include="Resources\icons8-book-shelf-48.png" />
+    <Content Include="Resources\icons8-book-stack-48.png" />
+    <Content Include="Resources\icons8-borrow-book-24.png" />
+    <None Include="Resources\icons8-borrow-book-48 %281%29.png" />
+    <Content Include="Resources\icons8-borrow-book-48.png" />
+    <Content Include="Resources\icons8-borrow-book-481.png" />
+    <Content Include="Resources\icons8-borrow-book-96 %281%29.png" />
+    <Content Include="Resources\icons8-borrow-book-96.png" />
+    <Content Include="Resources\icons8-client-management-48.png" />
+    <Content Include="Resources\icons8-cloud-computing-48 %281%29.png" />
+    <Content Include="Resources\icons8-cloud-computing-48.png" />
+    <Content Include="Resources\icons8-computer-support-96 %281%29.png" />
+    <Content Include="Resources\icons8-computer-support-96 %281%291.png" />
+    <Content Include="Resources\icons8-computer-support-96.png" />
+    <Content Include="Resources\icons8-contact-24 %281%29.png" />
+    <Content Include="Resources\icons8-contact-24.png" />
+    <Content Include="Resources\icons8-documents-48.png" />
+    <None Include="Resources\icons8-doughnut-chart-96.png" />
+    <Content Include="Resources\icons8-export-48.png" />
+    <Content Include="Resources\icons8-gmail-login-24 %281%29.png" />
+    <Content Include="Resources\icons8-gmail-login-24.png" />
+    <Content Include="Resources\icons8-graph-report-48.png" />
+    <None Include="Resources\icons8-graph-report-481.png" />
+    <Content Include="Resources\icons8-home-48.png" />
+    <Content Include="Resources\icons8-home-96.png" />
+    <None Include="Resources\icons8-important-book-48.png" />
+    <None Include="Resources\icons8-important-book-96.png" />
+    <None Include="Resources\icons8-increase-96 %281%29.png" />
+    <None Include="Resources\icons8-increase-96 %281%291.png" />
+    <Content Include="Resources\icons8-insert-column-right-96.png" />
+    <Content Include="Resources\icons8-insert-page-96.png" />
+    <None Include="Resources\icons8-joining-queue-96.png" />
+    <Content Include="Resources\icons8-key-24 %281%29.png" />
+    <Content Include="Resources\icons8-key-24.png" />
+    <Content Include="Resources\icons8-laptop-64.png" />
+    <Content Include="Resources\icons8-laptop-641.png" />
+    <Content Include="Resources\icons8-logout-rounded-left-24.png" />
+    <Content Include="Resources\icons8-logout-rounded-left-241.png" />
+    <Content Include="Resources\icons8-logout-rounded-left-48 %281%29.png" />
+    <Content Include="Resources\icons8-logout-rounded-left-48.png" />
+    <Content Include="Resources\icons8-logout-rounded-left-481.png" />
+    <Content Include="Resources\icons8-logout-rounded-left-96.png" />
+    <Content Include="Resources\icons8-menu-24.png" />
+    <Content Include="Resources\icons8-menu-241.png" />
+    <Content Include="Resources\icons8-menu-48 %281%29.png" />
+    <Content Include="Resources\icons8-menu-48 %281%291.png" />
+    <Content Include="Resources\icons8-menu-48.png" />
+    <Content Include="Resources\icons8-minus-sign-24.png" />
+    <Content Include="Resources\icons8-minus-sign-48.png" />
+    <Content Include="Resources\icons8-move-left-96.png" />
+    <Content Include="Resources\icons8-name-tag-24 %281%29.png" />
+    <Content Include="Resources\icons8-name-tag-24.png" />
+    <Content Include="Resources\icons8-note-64.png" />
+    <None Include="Resources\icons8-padlock-64.png" />
+    <None Include="Resources\icons8-padlock-641.png" />
+    <Content Include="Resources\icons8-parking-ticket-48.png" />
+    <Content Include="Resources\icons8-play-graph-report-40.png" />
+    <Content Include="Resources\icons8-plus-64.png" />
+    <Content Include="Resources\icons8-read-online-48.png" />
+    <Content Include="Resources\icons8-read-online-96.png" />
+    <Content Include="Resources\icons8-remove-96.png" />
+    <Content Include="Resources\icons8-return-book-96 %281%29.png" />
+    <Content Include="Resources\icons8-return-book-96.png" />
+    <Content Include="Resources\icons8-search-24 %281%29.png" />
+    <Content Include="Resources\icons8-search-24 %282%29.png" />
+    <Content Include="Resources\icons8-search-24 %282%291.png" />
+    <Content Include="Resources\icons8-search-24 %282%292.png" />
+    <Content Include="Resources\icons8-search-24.png" />
+    <Content Include="Resources\icons8-search-241.png" />
+    <None Include="Resources\icons8-send-to-printer-48.png" />
+    <Content Include="Resources\icons8-shutdown-48 %281%29.png" />
+    <Content Include="Resources\icons8-shutdown-48 %282%29.png" />
+    <Content Include="Resources\icons8-shutdown-48 %282%291.png" />
+    <Content Include="Resources\icons8-shutdown-48.png" />
+    <None Include="Resources\icons8-time-machine-50.png" />
+    <None Include="Resources\icons8-time-machine-501.png" />
+    <None Include="Resources\icons8-time-machine-64.png" />
+    <Content Include="Resources\icons8-trash-100.png" />
+    <Content Include="Resources\icons8-user-folder-40.png" />
+    <None Include="Resources\icons8-xls-48.png" />
+    <Content Include="Resources\Image_login.jpg" />
+    <None Include="Resources\maxresdefault.jpg" />
+    <None Include="Resources\maxresdefault1.jpg" />
+    <None Include="Resources\janko-ferlic-sfL_QOnmy00-unsplash.jpg" />
+    <None Include="Resources\maxresdefault2.jpg" />
+    <Content Include="Resources\pass.png" />
+    <Content Include="Resources\return.png" />
+    <Content Include="Resources\user.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
