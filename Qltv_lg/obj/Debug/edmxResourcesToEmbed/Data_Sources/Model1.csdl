@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLTVMATTERByHPXCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="FUN_LietKeTrangThai1DauSach_Result">
+    <Property Name="tendausach" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tinhtrangsach" Type="Int32" Nullable="false" />
+    <Property Name="thống_kê" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="Func_sach1muonDocGia_Result">
+    <Property Name="maquyensach" Type="Int32" Nullable="false" />
+    <Property Name="madausach" Type="Int32" Nullable="false" />
+    <Property Name="tinhtrangsach" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="List1SACH_Result">
+    <Property Name="madausach" Type="Int32" Nullable="false" />
+    <Property Name="tendausach" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="soluong" Type="Int32" Nullable="false" />
+    <Property Name="sotrang" Type="Int32" Nullable="false" />
+    <Property Name="tentacgia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ListALLQS_Result">
+    <Property Name="maquyensach" Type="Int32" Nullable="false" />
+    <Property Name="tinhtrangsach" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="tb_bb_nhanlaisach">
+    <Key>
+      <PropertyRef Name="mabbnhanlai" />
+    </Key>
+    <Property Name="mabbnhanlai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mathedocgia" Type="Int32" Nullable="false" />
+    <Property Name="manhanvien" Type="Int32" Nullable="false" />
+    <Property Name="ngaytra" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="tb_ct_nhanlai" Relationship="Self.fk_tb_bb_nhanlaisach_tb_ct_nhanlai" FromRole="tb_bb_nhanlaisach" ToRole="tb_ct_nhanlai" />
+    <NavigationProperty Name="tb_phieuphat" Relationship="Self.fk_tb_bb_nhanlaisach_tb_phieuphat" FromRole="tb_bb_nhanlaisach" ToRole="tb_phieuphat" />
+    <NavigationProperty Name="tb_docgia" Relationship="Self.fk_tb_docgia_tb_bb_nhanlaisach" FromRole="tb_bb_nhanlaisach" ToRole="tb_docgia" />
+    <NavigationProperty Name="tb_NhanVien" Relationship="Self.fk_tb_nhanvien_tb_bb_nhanlaisach" FromRole="tb_bb_nhanlaisach" ToRole="tb_NhanVien" />
+  </EntityType>
+  <EntityType Name="tb_ct_nhanlai">
+    <Key>
+      <PropertyRef Name="mabbnhanlai" />
+      <PropertyRef Name="maquyensach" />
+    </Key>
+    <Property Name="mabbnhanlai" Type="Int32" Nullable="false" />
+    <Property Name="maquyensach" Type="Int32" Nullable="false" />
+    <Property Name="tinhtrangnhanlai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_bb_nhanlaisach" Relationship="Self.fk_tb_bb_nhanlaisach_tb_ct_nhanlai" FromRole="tb_ct_nhanlai" ToRole="tb_bb_nhanlaisach" />
+    <NavigationProperty Name="tb_sach" Relationship="Self.fk_tb_sach_tb_ct_nhalai" FromRole="tb_ct_nhanlai" ToRole="tb_sach" />
+  </EntityType>
+  <EntityType Name="tb_ct_phieuphat">
+    <Key>
+      <PropertyRef Name="maphieuphat" />
+      <PropertyRef Name="maquyensach" />
+    </Key>
+    <Property Name="maphieuphat" Type="Int32" Nullable="false" />
+    <Property Name="maquyensach" Type="Int32" Nullable="false" />
+    <Property Name="songayquahan" Type="Int32" Nullable="false" />
+    <Property Name="tinhtranghong" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_phieuphat" Relationship="Self.fk_tb_phieuphat_tb_ct_phieuphat" FromRole="tb_ct_phieuphat" ToRole="tb_phieuphat" />
+    <NavigationProperty Name="tb_sach" Relationship="Self.fk_tb_sach_tb_ct_phieuphat" FromRole="tb_ct_phieuphat" ToRole="tb_sach" />
+  </EntityType>
+  <EntityType Name="tb_ct_tacgia">
+    <Key>
+      <PropertyRef Name="matacgia" />
+      <PropertyRef Name="madausach" />
+    </Key>
+    <Property Name="matacgia" Type="Int32" Nullable="false" />
+    <Property Name="madausach" Type="Int32" Nullable="false" />
+    <Property Name="vaitrotacgia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_dausach" Relationship="Self.fk_tb_dausach_tb_ct_tacgia" FromRole="tb_ct_tacgia" ToRole="tb_dausach" />
+    <NavigationProperty Name="tb_tacgia" Relationship="Self.fk_tb_tacgia_tb_ct_tacgia" FromRole="tb_ct_tacgia" ToRole="tb_tacgia" />
+  </EntityType>
+  <EntityType Name="tb_dausach">
+    <Key>
+      <PropertyRef Name="madausach" />
+    </Key>
+    <Property Name="madausach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tendausach" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="soluong" Type="Int32" Nullable="false" />
+    <Property Name="sotrang" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_ct_tacgia" Relationship="Self.fk_tb_dausach_tb_ct_tacgia" FromRole="tb_dausach" ToRole="tb_ct_tacgia" />
+    <NavigationProperty Name="tb_sach" Relationship="Self.fk_tb_dausach_tb_sach" FromRole="tb_dausach" ToRole="tb_sach" />
+  </EntityType>
+  <EntityType Name="tb_docgia">
+    <Key>
+      <PropertyRef Name="mathedocgia" />
+    </Key>
+    <Property Name="mathedocgia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hoten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngaysinh" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ngaylamthe" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="diachi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="doituongdocgia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_bb_nhanlaisach" Relationship="Self.fk_tb_docgia_tb_bb_nhanlaisach" FromRole="tb_docgia" ToRole="tb_bb_nhanlaisach" />
+    <NavigationProperty Name="tb_phieubangiaosach" Relationship="Self.fk_tb_ct_phieubangiao_tb_phieubangiaosach" FromRole="tb_docgia" ToRole="tb_phieubangiaosach" />
+  </EntityType>
+  <EntityType Name="tb_NhanVien">
+    <Key>
+      <PropertyRef Name="manhanvien" />
+    </Key>
+    <Property Name="manhanvien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tennhanvien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="taikhoan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="matKhau" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_bb_nhanlaisach" Relationship="Self.fk_tb_nhanvien_tb_bb_nhanlaisach" FromRole="tb_NhanVien" ToRole="tb_bb_nhanlaisach" />
+    <NavigationProperty Name="tb_Acount" Relationship="Self.FK__tb_Acount__manha__4E88ABD4" FromRole="tb_NhanVien" ToRole="tb_Acount" />
+    <NavigationProperty Name="tb_phieubangiaosach" Relationship="Self.fk_tb_ct_chomuon_tb_phieubangiaosach" FromRole="tb_NhanVien" ToRole="tb_phieubangiaosach" />
+  </EntityType>
+  <EntityType Name="tb_phieubangiaosach">
+    <Key>
+      <PropertyRef Name="maphieubangiao" />
+    </Key>
+    <Property Name="maphieubangiao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mathedocgia" Type="Int32" Nullable="false" />
+    <Property Name="manhanvien" Type="Int32" Nullable="false" />
+    <Property Name="ngaymuon" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ngaydukientra" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="tinhtrangkhigiao" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_docgia" Relationship="Self.fk_tb_ct_phieubangiao_tb_phieubangiaosach" FromRole="tb_phieubangiaosach" ToRole="tb_docgia" />
+    <NavigationProperty Name="tb_NhanVien" Relationship="Self.fk_tb_ct_chomuon_tb_phieubangiaosach" FromRole="tb_phieubangiaosach" ToRole="tb_NhanVien" />
+    <NavigationProperty Name="tb_sach" Relationship="Self.tb_ct_phieubangiao" FromRole="tb_phieubangiaosach" ToRole="tb_sach" />
+  </EntityType>
+  <EntityType Name="tb_phieuphat">
+    <Key>
+      <PropertyRef Name="maphieuphat" />
+    </Key>
+    <Property Name="maphieuphat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mabbnhanlai" Type="Int32" Nullable="false" />
+    <Property Name="tongtien" Type="Int32" />
+    <NavigationProperty Name="tb_bb_nhanlaisach" Relationship="Self.fk_tb_bb_nhanlaisach_tb_phieuphat" FromRole="tb_phieuphat" ToRole="tb_bb_nhanlaisach" />
+    <NavigationProperty Name="tb_ct_phieuphat" Relationship="Self.fk_tb_phieuphat_tb_ct_phieuphat" FromRole="tb_phieuphat" ToRole="tb_ct_phieuphat" />
+  </EntityType>
+  <EntityType Name="tb_sach">
+    <Key>
+      <PropertyRef Name="maquyensach" />
+    </Key>
+    <Property Name="maquyensach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="madausach" Type="Int32" Nullable="false" />
+    <Property Name="tinhtrangsach" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_ct_nhanlai" Relationship="Self.fk_tb_sach_tb_ct_nhalai" FromRole="tb_sach" ToRole="tb_ct_nhanlai" />
+    <NavigationProperty Name="tb_ct_phieuphat" Relationship="Self.fk_tb_sach_tb_ct_phieuphat" FromRole="tb_sach" ToRole="tb_ct_phieuphat" />
+    <NavigationProperty Name="tb_dausach" Relationship="Self.fk_tb_dausach_tb_sach" FromRole="tb_sach" ToRole="tb_dausach" />
+    <NavigationProperty Name="tb_phieubangiaosach" Relationship="Self.tb_ct_phieubangiao" FromRole="tb_sach" ToRole="tb_phieubangiaosach" />
+  </EntityType>
+  <EntityType Name="tb_tacgia">
+    <Key>
+      <PropertyRef Name="matacgia" />
+    </Key>
+    <Property Name="matacgia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tentacgia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_ct_tacgia" Relationship="Self.fk_tb_tacgia_tb_ct_tacgia" FromRole="tb_tacgia" ToRole="tb_ct_tacgia" />
+  </EntityType>
+  <EntityType Name="tb_Acount">
+    <Key>
+      <PropertyRef Name="Gmail" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="manhanVien" />
+    </Key>
+    <Property Name="Gmail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="manhanVien" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_NhanVien" Relationship="Self.FK__tb_Acount__manha__4E88ABD4" FromRole="tb_Acount" ToRole="tb_NhanVien" />
+  </EntityType>
+  <Association Name="fk_tb_bb_nhanlaisach_tb_ct_nhanlai">
+    <End Role="tb_bb_nhanlaisach" Type="Self.tb_bb_nhanlaisach" Multiplicity="1" />
+    <End Role="tb_ct_nhanlai" Type="Self.tb_ct_nhanlai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_bb_nhanlaisach">
+        <PropertyRef Name="mabbnhanlai" />
+      </Principal>
+      <Dependent Role="tb_ct_nhanlai">
+        <PropertyRef Name="mabbnhanlai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_bb_nhanlaisach_tb_phieuphat">
+    <End Role="tb_bb_nhanlaisach" Type="Self.tb_bb_nhanlaisach" Multiplicity="1" />
+    <End Role="tb_phieuphat" Type="Self.tb_phieuphat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_bb_nhanlaisach">
+        <PropertyRef Name="mabbnhanlai" />
+      </Principal>
+      <Dependent Role="tb_phieuphat">
+        <PropertyRef Name="mabbnhanlai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_docgia_tb_bb_nhanlaisach">
+    <End Role="tb_docgia" Type="Self.tb_docgia" Multiplicity="1" />
+    <End Role="tb_bb_nhanlaisach" Type="Self.tb_bb_nhanlaisach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_docgia">
+        <PropertyRef Name="mathedocgia" />
+      </Principal>
+      <Dependent Role="tb_bb_nhanlaisach">
+        <PropertyRef Name="mathedocgia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_nhanvien_tb_bb_nhanlaisach">
+    <End Role="tb_NhanVien" Type="Self.tb_NhanVien" Multiplicity="1" />
+    <End Role="tb_bb_nhanlaisach" Type="Self.tb_bb_nhanlaisach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NhanVien">
+        <PropertyRef Name="manhanvien" />
+      </Principal>
+      <Dependent Role="tb_bb_nhanlaisach">
+        <PropertyRef Name="manhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_sach_tb_ct_nhalai">
+    <End Role="tb_sach" Type="Self.tb_sach" Multiplicity="1" />
+    <End Role="tb_ct_nhanlai" Type="Self.tb_ct_nhanlai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_sach">
+        <PropertyRef Name="maquyensach" />
+      </Principal>
+      <Dependent Role="tb_ct_nhanlai">
+        <PropertyRef Name="maquyensach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_phieuphat_tb_ct_phieuphat">
+    <End Role="tb_phieuphat" Type="Self.tb_phieuphat" Multiplicity="1" />
+    <End Role="tb_ct_phieuphat" Type="Self.tb_ct_phieuphat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_phieuphat">
+        <PropertyRef Name="maphieuphat" />
+      </Principal>
+      <Dependent Role="tb_ct_phieuphat">
+        <PropertyRef Name="maphieuphat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_sach_tb_ct_phieuphat">
+    <End Role="tb_sach" Type="Self.tb_sach" Multiplicity="1" />
+    <End Role="tb_ct_phieuphat" Type="Self.tb_ct_phieuphat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_sach">
+        <PropertyRef Name="maquyensach" />
+      </Principal>
+      <Dependent Role="tb_ct_phieuphat">
+        <PropertyRef Name="maquyensach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_dausach_tb_ct_tacgia">
+    <End Role="tb_dausach" Type="Self.tb_dausach" Multiplicity="1" />
+    <End Role="tb_ct_tacgia" Type="Self.tb_ct_tacgia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_dausach">
+        <PropertyRef Name="madausach" />
+      </Principal>
+      <Dependent Role="tb_ct_tacgia">
+        <PropertyRef Name="madausach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_tacgia_tb_ct_tacgia">
+    <End Role="tb_tacgia" Type="Self.tb_tacgia" Multiplicity="1" />
+    <End Role="tb_ct_tacgia" Type="Self.tb_ct_tacgia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tacgia">
+        <PropertyRef Name="matacgia" />
+      </Principal>
+      <Dependent Role="tb_ct_tacgia">
+        <PropertyRef Name="matacgia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_dausach_tb_sach">
+    <End Role="tb_dausach" Type="Self.tb_dausach" Multiplicity="1" />
+    <End Role="tb_sach" Type="Self.tb_sach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_dausach">
+        <PropertyRef Name="madausach" />
+      </Principal>
+      <Dependent Role="tb_sach">
+        <PropertyRef Name="madausach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_ct_phieubangiao_tb_phieubangiaosach">
+    <End Role="tb_docgia" Type="Self.tb_docgia" Multiplicity="1" />
+    <End Role="tb_phieubangiaosach" Type="Self.tb_phieubangiaosach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_docgia">
+        <PropertyRef Name="mathedocgia" />
+      </Principal>
+      <Dependent Role="tb_phieubangiaosach">
+        <PropertyRef Name="mathedocgia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Acount__manha__4E88ABD4">
+    <End Role="tb_NhanVien" Type="Self.tb_NhanVien" Multiplicity="1" />
+    <End Role="tb_Acount" Type="Self.tb_Acount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NhanVien">
+        <PropertyRef Name="manhanvien" />
+      </Principal>
+      <Dependent Role="tb_Acount">
+        <PropertyRef Name="manhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_ct_chomuon_tb_phieubangiaosach">
+    <End Role="tb_NhanVien" Type="Self.tb_NhanVien" Multiplicity="1" />
+    <End Role="tb_phieubangiaosach" Type="Self.tb_phieubangiaosach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NhanVien">
+        <PropertyRef Name="manhanvien" />
+      </Principal>
+      <Dependent Role="tb_phieubangiaosach">
+        <PropertyRef Name="manhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tb_ct_phieubangiao">
+    <End Role="tb_phieubangiaosach" Type="Self.tb_phieubangiaosach" Multiplicity="*" />
+    <End Role="tb_sach" Type="Self.tb_sach" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="QLTVMATTERByHPXCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_bb_nhanlaisach" EntityType="Self.tb_bb_nhanlaisach" />
+    <EntitySet Name="tb_ct_nhanlai" EntityType="Self.tb_ct_nhanlai" />
+    <EntitySet Name="tb_ct_phieuphat" EntityType="Self.tb_ct_phieuphat" />
+    <EntitySet Name="tb_ct_tacgia" EntityType="Self.tb_ct_tacgia" />
+    <EntitySet Name="tb_dausach" EntityType="Self.tb_dausach" />
+    <EntitySet Name="tb_docgia" EntityType="Self.tb_docgia" />
+    <EntitySet Name="tb_NhanVien" EntityType="Self.tb_NhanVien" />
+    <EntitySet Name="tb_phieubangiaosach" EntityType="Self.tb_phieubangiaosach" />
+    <EntitySet Name="tb_phieuphat" EntityType="Self.tb_phieuphat" />
+    <EntitySet Name="tb_sach" EntityType="Self.tb_sach" />
+    <EntitySet Name="tb_tacgia" EntityType="Self.tb_tacgia" />
+    <EntitySet Name="tb_Acount" EntityType="Self.tb_Acount" />
+    <AssociationSet Name="fk_tb_bb_nhanlaisach_tb_ct_nhanlai" Association="Self.fk_tb_bb_nhanlaisach_tb_ct_nhanlai">
+      <End Role="tb_bb_nhanlaisach" EntitySet="tb_bb_nhanlaisach" />
+      <End Role="tb_ct_nhanlai" EntitySet="tb_ct_nhanlai" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_bb_nhanlaisach_tb_phieuphat" Association="Self.fk_tb_bb_nhanlaisach_tb_phieuphat">
+      <End Role="tb_bb_nhanlaisach" EntitySet="tb_bb_nhanlaisach" />
+      <End Role="tb_phieuphat" EntitySet="tb_phieuphat" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_docgia_tb_bb_nhanlaisach" Association="Self.fk_tb_docgia_tb_bb_nhanlaisach">
+      <End Role="tb_docgia" EntitySet="tb_docgia" />
+      <End Role="tb_bb_nhanlaisach" EntitySet="tb_bb_nhanlaisach" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_nhanvien_tb_bb_nhanlaisach" Association="Self.fk_tb_nhanvien_tb_bb_nhanlaisach">
+      <End Role="tb_NhanVien" EntitySet="tb_NhanVien" />
+      <End Role="tb_bb_nhanlaisach" EntitySet="tb_bb_nhanlaisach" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_sach_tb_ct_nhalai" Association="Self.fk_tb_sach_tb_ct_nhalai">
+      <End Role="tb_sach" EntitySet="tb_sach" />
+      <End Role="tb_ct_nhanlai" EntitySet="tb_ct_nhanlai" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_phieuphat_tb_ct_phieuphat" Association="Self.fk_tb_phieuphat_tb_ct_phieuphat">
+      <End Role="tb_phieuphat" EntitySet="tb_phieuphat" />
+      <End Role="tb_ct_phieuphat" EntitySet="tb_ct_phieuphat" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_sach_tb_ct_phieuphat" Association="Self.fk_tb_sach_tb_ct_phieuphat">
+      <End Role="tb_sach" EntitySet="tb_sach" />
+      <End Role="tb_ct_phieuphat" EntitySet="tb_ct_phieuphat" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_dausach_tb_ct_tacgia" Association="Self.fk_tb_dausach_tb_ct_tacgia">
+      <End Role="tb_dausach" EntitySet="tb_dausach" />
+      <End Role="tb_ct_tacgia" EntitySet="tb_ct_tacgia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_tacgia_tb_ct_tacgia" Association="Self.fk_tb_tacgia_tb_ct_tacgia">
+      <End Role="tb_tacgia" EntitySet="tb_tacgia" />
+      <End Role="tb_ct_tacgia" EntitySet="tb_ct_tacgia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_dausach_tb_sach" Association="Self.fk_tb_dausach_tb_sach">
+      <End Role="tb_dausach" EntitySet="tb_dausach" />
+      <End Role="tb_sach" EntitySet="tb_sach" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_ct_phieubangiao_tb_phieubangiaosach" Association="Self.fk_tb_ct_phieubangiao_tb_phieubangiaosach">
+      <End Role="tb_docgia" EntitySet="tb_docgia" />
+      <End Role="tb_phieubangiaosach" EntitySet="tb_phieubangiaosach" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Acount__manha__4E88ABD4" Association="Self.FK__tb_Acount__manha__4E88ABD4">
+      <End Role="tb_NhanVien" EntitySet="tb_NhanVien" />
+      <End Role="tb_Acount" EntitySet="tb_Acount" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_ct_chomuon_tb_phieubangiaosach" Association="Self.fk_tb_ct_chomuon_tb_phieubangiaosach">
+      <End Role="tb_NhanVien" EntitySet="tb_NhanVien" />
+      <End Role="tb_phieubangiaosach" EntitySet="tb_phieubangiaosach" />
+    </AssociationSet>
+    <AssociationSet Name="tb_ct_phieubangiao" Association="Self.tb_ct_phieubangiao">
+      <End Role="tb_phieubangiaosach" EntitySet="tb_phieubangiaosach" />
+      <End Role="tb_sach" EntitySet="tb_sach" />
+    </AssociationSet>
+    <FunctionImport Name="FUN_LietKeTrangThai1DauSach" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.FUN_LietKeTrangThai1DauSach_Result)">
+      <Parameter Name="iddausach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Func_sach1muonDocGia" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.Func_sach1muonDocGia_Result)">
+      <Parameter Name="iddocgia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="List1SACH" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.List1SACH_Result)" />
+    <FunctionImport Name="ListALLQS" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.ListALLQS_Result)">
+      <Parameter Name="iddausach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_delete1DauSach">
+      <Parameter Name="iddausach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_Delete1QuyenSach">
+      <Parameter Name="idsach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_insert1quyenSach">
+      <Parameter Name="tentacgia" Mode="In" Type="String" />
+      <Parameter Name="tendausach" Mode="In" Type="String" />
+      <Parameter Name="soluong" Mode="In" Type="Int32" />
+      <Parameter Name="sotrang" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_insertPhieuBanGiao">
+      <Parameter Name="idSach" Mode="In" Type="Int32" />
+      <Parameter Name="mathedocgia" Mode="In" Type="Int32" />
+      <Parameter Name="manhanvien" Mode="In" Type="Int32" />
+      <Parameter Name="ngaymuon" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaydukientra" Mode="In" Type="DateTime" />
+      <Parameter Name="tinhtrangkhigiao" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_sachmuon1DocGia" ReturnType="Collection(QLTVMATTERByHPXCModel.USP_sachmuon1DocGia_Result)">
+      <Parameter Name="iddocgia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_traSach">
+      <Parameter Name="ngaytra" Mode="In" Type="DateTime" />
+      <Parameter Name="mathedocgia" Mode="In" Type="Int32" />
+      <Parameter Name="manhanvien" Mode="In" Type="Int32" />
+      <Parameter Name="idSach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_UpdateDauSach">
+      <Parameter Name="iddausach" Mode="In" Type="Int32" />
+      <Parameter Name="tendausach" Mode="In" Type="String" />
+      <Parameter Name="tentacgia" Mode="In" Type="String" />
+      <Parameter Name="soluong" Mode="In" Type="Int32" />
+      <Parameter Name="sotrang" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InformationNV" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.InformationNV_Result)">
+      <Parameter Name="manv" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="FunC_InformationNV" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.FunC_InformationNV_Result)" />
+    <FunctionImport Name="Fun_AllDocgia" IsComposable="true" ReturnType="Collection(QLTVMATTERByHPXCModel.Fun_AllDocgia_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLTVMATTERByHPXCModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLTVMATTERByHPXCModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="Insert1DocGia">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="doituong" Mode="In" Type="String" />
+      <Parameter Name="ngaysinh" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaylamthe" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Delete1DocGia">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USPsearch" ReturnType="Collection(QLTVMATTERByHPXCModel.USPsearch_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USPsearch_tenDocGia" ReturnType="Collection(QLTVMATTERByHPXCModel.USPsearch_tenDocGia_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_them1QS">
+      <Parameter Name="idmadausach" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="USP_sachmuon1DocGia_Result">
+    <Property Type="Int32" Name="maquyensach" Nullable="false" />
+    <Property Type="Int32" Name="madausach" Nullable="false" />
+    <Property Type="Int32" Name="tinhtrangsach" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="InformationNV_Result">
+    <Property Type="Int32" Name="manhanvien" Nullable="false" />
+    <Property Type="String" Name="tennhanvien" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="taikhoan" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="matKhau" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="FunC_InformationNV_Result">
+    <Property Type="Int32" Name="manhanvien" Nullable="false" />
+    <Property Type="String" Name="tennhanvien" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="taikhoan" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="matKhau" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="Fun_AllDocgia_Result">
+    <Property Type="Int32" Name="mathedocgia" Nullable="false" />
+    <Property Type="String" Name="hoten" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="ngaysinh" Nullable="false" Precision="10" />
+    <Property Type="DateTime" Name="ngaylamthe" Nullable="false" Precision="10" />
+    <Property Type="String" Name="diachi" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="doituongdocgia" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="USPsearch_Result">
+    <Property Type="Int32" Name="maquyensach" Nullable="false" />
+    <Property Type="String" Name="tendausach" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="USPsearch_tenDocGia_Result">
+    <Property Type="Int32" Name="mathedocgia" Nullable="false" />
+    <Property Type="String" Name="hoten" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="ngaysinh" Nullable="false" />
+    <Property Type="DateTime" Name="ngaylamthe" Nullable="false" />
+    <Property Type="String" Name="diachi" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="doituongdocgia" Nullable="false" MaxLength="30" />
+  </ComplexType>
+</Schema>

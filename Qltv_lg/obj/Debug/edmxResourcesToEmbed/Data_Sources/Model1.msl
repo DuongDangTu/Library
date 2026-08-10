@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLTVMATTERByHPXCModelStoreContainer" CdmEntityContainer="QLTVMATTERByHPXCEntities">
+    <EntitySetMapping Name="tb_bb_nhanlaisach">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_bb_nhanlaisach">
+        <MappingFragment StoreEntitySet="tb_bb_nhanlaisach">
+          <ScalarProperty Name="mabbnhanlai" ColumnName="mabbnhanlai" />
+          <ScalarProperty Name="mathedocgia" ColumnName="mathedocgia" />
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="ngaytra" ColumnName="ngaytra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ct_nhanlai">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_ct_nhanlai">
+        <MappingFragment StoreEntitySet="tb_ct_nhanlai">
+          <ScalarProperty Name="mabbnhanlai" ColumnName="mabbnhanlai" />
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="tinhtrangnhanlai" ColumnName="tinhtrangnhanlai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ct_phieuphat">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_ct_phieuphat">
+        <MappingFragment StoreEntitySet="tb_ct_phieuphat">
+          <ScalarProperty Name="maphieuphat" ColumnName="maphieuphat" />
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="songayquahan" ColumnName="songayquahan" />
+          <ScalarProperty Name="tinhtranghong" ColumnName="tinhtranghong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ct_tacgia">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_ct_tacgia">
+        <MappingFragment StoreEntitySet="tb_ct_tacgia">
+          <ScalarProperty Name="matacgia" ColumnName="matacgia" />
+          <ScalarProperty Name="madausach" ColumnName="madausach" />
+          <ScalarProperty Name="vaitrotacgia" ColumnName="vaitrotacgia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_dausach">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_dausach">
+        <MappingFragment StoreEntitySet="tb_dausach">
+          <ScalarProperty Name="madausach" ColumnName="madausach" />
+          <ScalarProperty Name="tendausach" ColumnName="tendausach" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="sotrang" ColumnName="sotrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_docgia">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_docgia">
+        <MappingFragment StoreEntitySet="tb_docgia">
+          <ScalarProperty Name="mathedocgia" ColumnName="mathedocgia" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+          <ScalarProperty Name="ngaylamthe" ColumnName="ngaylamthe" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="doituongdocgia" ColumnName="doituongdocgia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_NhanVien">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_NhanVien">
+        <MappingFragment StoreEntitySet="tb_NhanVien">
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="matKhau" ColumnName="matKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_phieubangiaosach">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_phieubangiaosach">
+        <MappingFragment StoreEntitySet="tb_phieubangiaosach">
+          <ScalarProperty Name="maphieubangiao" ColumnName="maphieubangiao" />
+          <ScalarProperty Name="mathedocgia" ColumnName="mathedocgia" />
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="ngaymuon" ColumnName="ngaymuon" />
+          <ScalarProperty Name="ngaydukientra" ColumnName="ngaydukientra" />
+          <ScalarProperty Name="tinhtrangkhigiao" ColumnName="tinhtrangkhigiao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_phieuphat">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_phieuphat">
+        <MappingFragment StoreEntitySet="tb_phieuphat">
+          <ScalarProperty Name="maphieuphat" ColumnName="maphieuphat" />
+          <ScalarProperty Name="mabbnhanlai" ColumnName="mabbnhanlai" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_sach">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_sach">
+        <MappingFragment StoreEntitySet="tb_sach">
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="madausach" ColumnName="madausach" />
+          <ScalarProperty Name="tinhtrangsach" ColumnName="tinhtrangsach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tacgia">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_tacgia">
+        <MappingFragment StoreEntitySet="tb_tacgia">
+          <ScalarProperty Name="matacgia" ColumnName="matacgia" />
+          <ScalarProperty Name="tentacgia" ColumnName="tentacgia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Acount">
+      <EntityTypeMapping TypeName="QLTVMATTERByHPXCModel.tb_Acount">
+        <MappingFragment StoreEntitySet="tb_Acount">
+          <ScalarProperty Name="Gmail" ColumnName="Gmail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="manhanVien" ColumnName="manhanVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tb_ct_phieubangiao" TypeName="QLTVMATTERByHPXCModel.tb_ct_phieubangiao" StoreEntitySet="tb_ct_phieubangiao">
+      <EndProperty Name="tb_phieubangiaosach">
+        <ScalarProperty Name="maphieubangiao" ColumnName="maphieubangiao" />
+      </EndProperty>
+      <EndProperty Name="tb_sach">
+        <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionName="QLTVMATTERByHPXCModel.Store.FUN_LietKeTrangThai1DauSach" FunctionImportName="FUN_LietKeTrangThai1DauSach">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.FUN_LietKeTrangThai1DauSach_Result">
+          <ScalarProperty Name="tendausach" ColumnName="tendausach" />
+          <ScalarProperty Name="tinhtrangsach" ColumnName="tinhtrangsach" />
+          <ScalarProperty Name="thống_kê" ColumnName="thống kê" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="QLTVMATTERByHPXCModel.Store.Func_sach1muonDocGia" FunctionImportName="Func_sach1muonDocGia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.Func_sach1muonDocGia_Result">
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="madausach" ColumnName="madausach" />
+          <ScalarProperty Name="tinhtrangsach" ColumnName="tinhtrangsach" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="QLTVMATTERByHPXCModel.Store.List1SACH" FunctionImportName="List1SACH">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.List1SACH_Result">
+          <ScalarProperty Name="madausach" ColumnName="madausach" />
+          <ScalarProperty Name="tendausach" ColumnName="tendausach" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="sotrang" ColumnName="sotrang" />
+          <ScalarProperty Name="tentacgia" ColumnName="tentacgia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="QLTVMATTERByHPXCModel.Store.ListALLQS" FunctionImportName="ListALLQS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.ListALLQS_Result">
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="tinhtrangsach" ColumnName="tinhtrangsach" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_delete1DauSach" FunctionName="QLTVMATTERByHPXCModel.Store.USP_delete1DauSach" />
+    <FunctionImportMapping FunctionImportName="USP_Delete1QuyenSach" FunctionName="QLTVMATTERByHPXCModel.Store.USP_Delete1QuyenSach" />
+    <FunctionImportMapping FunctionImportName="USP_insert1quyenSach" FunctionName="QLTVMATTERByHPXCModel.Store.USP_insert1quyenSach" />
+    <FunctionImportMapping FunctionImportName="USP_insertPhieuBanGiao" FunctionName="QLTVMATTERByHPXCModel.Store.USP_insertPhieuBanGiao" />
+    <FunctionImportMapping FunctionImportName="USP_sachmuon1DocGia" FunctionName="QLTVMATTERByHPXCModel.Store.USP_sachmuon1DocGia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.USP_sachmuon1DocGia_Result">
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="madausach" ColumnName="madausach" />
+          <ScalarProperty Name="tinhtrangsach" ColumnName="tinhtrangsach" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_traSach" FunctionName="QLTVMATTERByHPXCModel.Store.USP_traSach" />
+    <FunctionImportMapping FunctionImportName="USP_UpdateDauSach" FunctionName="QLTVMATTERByHPXCModel.Store.USP_UpdateDauSach" />
+    <FunctionImportMapping FunctionImportName="FunC_InformationNV" FunctionName="QLTVMATTERByHPXCModel.Store.FunC_InformationNV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.FunC_InformationNV_Result">
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="matKhau" ColumnName="matKhau" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Fun_AllDocgia" FunctionName="QLTVMATTERByHPXCModel.Store.Fun_AllDocgia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.Fun_AllDocgia_Result">
+          <ScalarProperty Name="mathedocgia" ColumnName="mathedocgia" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+          <ScalarProperty Name="ngaylamthe" ColumnName="ngaylamthe" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="doituongdocgia" ColumnName="doituongdocgia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLTVMATTERByHPXCModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLTVMATTERByHPXCModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLTVMATTERByHPXCModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLTVMATTERByHPXCModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLTVMATTERByHPXCModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLTVMATTERByHPXCModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLTVMATTERByHPXCModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="Insert1DocGia" FunctionName="QLTVMATTERByHPXCModel.Store.Insert1DocGia" />
+    <FunctionImportMapping FunctionImportName="Delete1DocGia" FunctionName="QLTVMATTERByHPXCModel.Store.Delete1DocGia" />
+    <FunctionImportMapping FunctionImportName="USPsearch" FunctionName="QLTVMATTERByHPXCModel.Store.USPsearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.USPsearch_Result">
+          <ScalarProperty Name="maquyensach" ColumnName="maquyensach" />
+          <ScalarProperty Name="tendausach" ColumnName="tendausach" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USPsearch_tenDocGia" FunctionName="QLTVMATTERByHPXCModel.Store.USPsearch_tenDocGia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLTVMATTERByHPXCModel.USPsearch_tenDocGia_Result">
+          <ScalarProperty Name="mathedocgia" ColumnName="mathedocgia" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+          <ScalarProperty Name="ngaylamthe" ColumnName="ngaylamthe" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="doituongdocgia" ColumnName="doituongdocgia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_them1QS" FunctionName="QLTVMATTERByHPXCModel.Store.USP_them1QS" />
+  </EntityContainerMapping>
+</Mapping>
