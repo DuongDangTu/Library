@@ -1,0 +1,8 @@
+Admin : 
+Tài Khoản:CongLien | Mật Khẩu:123456
+Tài Khoản:XuanDuc  | Mật Khẩu:123456 
+
+
+User  :
+Tài Khoản:LienCong | Mật Khẩu:123456 
+Tài Khoản:LongRong | Mật Khẩu:123456 
