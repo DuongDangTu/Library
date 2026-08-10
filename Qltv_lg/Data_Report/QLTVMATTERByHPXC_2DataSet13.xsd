@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLTVMATTERByHPXC_2DataSet1" targetNamespace="http://tempuri.org/QLTVMATTERByHPXC_2DataSet13.xsd" xmlns:mstns="http://tempuri.org/QLTVMATTERByHPXC_2DataSet13.xsd" xmlns="http://tempuri.org/QLTVMATTERByHPXC_2DataSet13.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLTVMATTERByHPXC_2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLTVMATTERByHPXC_2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Qltv_lg.Properties.Settings.GlobalReference.Default.QLTVMATTERByHPXC_2ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="function_listSachLOSSTableAdapter" GeneratorDataComponentClassName="function_listSachLOSSTableAdapter" Name="function_listSachLOSS" UserDataComponentName="function_listSachLOSSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLTVMATTERByHPXC_2ConnectionString (Settings)" DbObjectName="QLTVMATTERByHPXC_2.dbo.function_listSachLOSS" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT maquyensach, madausach, tendausach, soluong, sotrang, tansuat, hoten, tinhtrangsach FROM dbo.function_listSachLOSS()</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="maquyensach" DataSetColumn="maquyensach" />
+              <Mapping SourceColumn="madausach" DataSetColumn="madausach" />
+              <Mapping SourceColumn="tendausach" DataSetColumn="tendausach" />
+              <Mapping SourceColumn="soluong" DataSetColumn="soluong" />
+              <Mapping SourceColumn="sotrang" DataSetColumn="sotrang" />
+              <Mapping SourceColumn="tansuat" DataSetColumn="tansuat" />
+              <Mapping SourceColumn="hoten" DataSetColumn="hoten" />
+              <Mapping SourceColumn="tinhtrangsach" DataSetColumn="tinhtrangsach" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLTVMATTERByHPXC_2DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLTVMATTERByHPXC_2DataSet1" msprop:Generator_UserDSName="QLTVMATTERByHPXC_2DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="function_listSachLOSS" msprop:Generator_TableClassName="function_listSachLOSSDataTable" msprop:Generator_TableVarName="tablefunction_listSachLOSS" msprop:Generator_TablePropName="function_listSachLOSS" msprop:Generator_RowDeletingName="function_listSachLOSSRowDeleting" msprop:Generator_RowChangingName="function_listSachLOSSRowChanging" msprop:Generator_RowEvHandlerName="function_listSachLOSSRowChangeEventHandler" msprop:Generator_RowDeletedName="function_listSachLOSSRowDeleted" msprop:Generator_UserTableName="function_listSachLOSS" msprop:Generator_RowChangedName="function_listSachLOSSRowChanged" msprop:Generator_RowEvArgName="function_listSachLOSSRowChangeEvent" msprop:Generator_RowClassName="function_listSachLOSSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maquyensach" msprop:Generator_ColumnVarNameInTable="columnmaquyensach" msprop:Generator_ColumnPropNameInRow="maquyensach" msprop:Generator_ColumnPropNameInTable="maquyensachColumn" msprop:Generator_UserColumnName="maquyensach" type="xs:int" />
+              <xs:element name="madausach" msprop:Generator_ColumnVarNameInTable="columnmadausach" msprop:Generator_ColumnPropNameInRow="madausach" msprop:Generator_ColumnPropNameInTable="madausachColumn" msprop:Generator_UserColumnName="madausach" type="xs:int" />
+              <xs:element name="tendausach" msprop:Generator_ColumnVarNameInTable="columntendausach" msprop:Generator_ColumnPropNameInRow="tendausach" msprop:Generator_ColumnPropNameInTable="tendausachColumn" msprop:Generator_UserColumnName="tendausach">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soluong" msprop:Generator_ColumnVarNameInTable="columnsoluong" msprop:Generator_ColumnPropNameInRow="soluong" msprop:Generator_ColumnPropNameInTable="soluongColumn" msprop:Generator_UserColumnName="soluong" type="xs:int" />
+              <xs:element name="sotrang" msprop:Generator_ColumnVarNameInTable="columnsotrang" msprop:Generator_ColumnPropNameInRow="sotrang" msprop:Generator_ColumnPropNameInTable="sotrangColumn" msprop:Generator_UserColumnName="sotrang" type="xs:int" />
+              <xs:element name="tansuat" msprop:Generator_ColumnVarNameInTable="columntansuat" msprop:Generator_ColumnPropNameInRow="tansuat" msprop:Generator_ColumnPropNameInTable="tansuatColumn" msprop:Generator_UserColumnName="tansuat" type="xs:int" minOccurs="0" />
+              <xs:element name="hoten" msprop:Generator_ColumnVarNameInTable="columnhoten" msprop:Generator_ColumnPropNameInRow="hoten" msprop:Generator_ColumnPropNameInTable="hotenColumn" msprop:Generator_UserColumnName="hoten">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tinhtrangsach" msprop:Generator_ColumnVarNameInTable="columntinhtrangsach" msprop:Generator_ColumnPropNameInRow="tinhtrangsach" msprop:Generator_ColumnPropNameInTable="tinhtrangsachColumn" msprop:Generator_UserColumnName="tinhtrangsach" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
