@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qltv_lg", "Qltv_lg\Qltv_lg.csproj", "{15C36D65-3C52-497A-9342-1710825EFD06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Connection_Sql", "Connection_Sql", "{DF7F7784-4ED8-4A8E-83AE-24EEEC643780}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Form_Libary", "Form_Libary", "{7E3F172C-ED04-4077-9F2D-BE50A48A8F88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15C36D65-3C52-497A-9342-1710825EFD06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C36D65-3C52-497A-9342-1710825EFD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C36D65-3C52-497A-9342-1710825EFD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C36D65-3C52-497A-9342-1710825EFD06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15C36D65-3C52-497A-9342-1710825EFD06} = {7E3F172C-ED04-4077-9F2D-BE50A48A8F88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A014EAB7-14C7-436B-A28F-F44724FF6930}
+	EndGlobalSection
+EndGlobal
